@@ -110,7 +110,7 @@ After every merge to `master`, count commits since the last `v*` tag:
 
 ```bash
 last_tag="$(git describe --tags --match 'v*' --abbrev=0 2>/dev/null || git rev-list --max-parents=0 master)"
-git log "$last_tag"..master --oneline
+git log "$last_tag"..master --format='%s'
 ```
 
 **Thresholds:**
